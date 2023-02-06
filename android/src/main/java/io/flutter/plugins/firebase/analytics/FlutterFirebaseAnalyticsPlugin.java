@@ -40,7 +40,6 @@ public class FlutterFirebaseAnalyticsPlugin
     FlutterFirebasePluginRegistry.registerPlugin(channelName, this);
   }
 
-  @SuppressWarnings("unchecked")
   private static Bundle createBundleFromMap(Map<String, Object> map) {
     if (map == null) {
       return null;
@@ -53,8 +52,7 @@ public class FlutterFirebaseAnalyticsPlugin
       if (value instanceof String) {
         bundle.putString(key, (String) value);
       } else if (value instanceof Integer) {
-        // FirebaseAnalytics default event parameters only support long and double types, so we convert the int to a long.
-        bundle.putLong(key, (Integer) value);
+        bundle.putInt(key, (Integer) value);
       } else if (value instanceof Long) {
         bundle.putLong(key, (Long) value);
       } else if (value instanceof Double) {

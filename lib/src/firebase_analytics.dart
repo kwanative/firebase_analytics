@@ -882,6 +882,13 @@ class FirebaseAnalytics extends FirebasePluginPlatform {
   Future<void> logViewCart({
     String? currency,
     double? value,
+    double? shipping,
+    String? coupon,
+    String? storeId,
+    String? storeName,
+    String? payment,
+    String? orderMode,
+    double? discount,
     List<AnalyticsEventItem>? items,
     AnalyticsCallOptions? callOptions,
   }) {
@@ -890,6 +897,13 @@ class FirebaseAnalytics extends FirebasePluginPlatform {
       parameters: filterOutNulls(<String, Object?>{
         _CURRENCY: currency,
         _VALUE: value,
+        _SHIPPING: shipping,
+        _COUPON: coupon,
+        _STORE_ID: storeId,
+        _STORE_NAME: storeName,
+        _PAYMENT: payment,
+        _ORDER_MODE: orderMode,
+        _DISCOUNT: discount,
         _ITEMS: items,
       }),
       callOptions: callOptions,

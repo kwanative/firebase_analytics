@@ -772,8 +772,9 @@ class FirebaseAnalytics extends FirebasePluginPlatform {
         _AFFILIATION: affiliation,
         _STORE_ID: storeId,
         _STORE_NAME: storeName,
-        _PAYMENT_TYPE: paymentType,
-        _DINING_MODE: diningMode,
+        _PAYMENT: payment,
+        _ORDER_MODE: orderMode,
+        _DISCOUNT: discount,
       }),
       callOptions: callOptions,
     );
@@ -1474,5 +1475,11 @@ const String _STORE_ID = 'storeId';
 /// The store name.
 const String _STORE_NAME = 'storeName';
 
-/// Dining Mode.
-const _DINING_MODE = 'diningMode';
+/// Payment.
+const String _PAYMENT = 'payment';
+
+/// Order Mode.
+const _ORDER_MODE = 'order_mode';
+
+/// Discount.
+const _DISCOUNT = 'discount';

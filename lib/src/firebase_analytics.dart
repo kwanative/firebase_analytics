@@ -753,8 +753,9 @@ class FirebaseAnalytics extends FirebasePluginPlatform {
     String? affiliation,
     String? storeId,
     String? storeName,
-    String? paymentType,
-    String? diningMode,
+    String? payment,
+    String? orderMode,
+    double? discount,
     AnalyticsCallOptions? callOptions,
   }) {
     _requireValueAndCurrencyTogether(value, currency);

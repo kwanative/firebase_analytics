@@ -1232,7 +1232,7 @@ class FirebaseAnalytics extends FirebasePluginPlatform {
     );
   }
 
-  /// Logs loyalty_coupon_viewed event.
+  /// Logs loyalty_coupon_used event.
   ///
   /// This event signifies that a user was used coupon.
   ///

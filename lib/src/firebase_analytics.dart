@@ -1216,7 +1216,6 @@ class FirebaseAnalytics extends FirebasePluginPlatform {
   Future<void> logLoyaltyCouponViewed({
     String? creativeName,
     String? creativeSlot,
-    List<AnalyticsEventItem>? items,
     String? promotionId,
     String? promotionName,
     AnalyticsCallOptions? callOptions,
@@ -1226,8 +1225,6 @@ class FirebaseAnalytics extends FirebasePluginPlatform {
       parameters: filterOutNulls(<String, Object?>{
         _CREATIVE_NAME: creativeName,
         _CREATIVE_SLOT: creativeSlot,
-        _ITEMS: _marshalItems(items),
-        _LOCATION_ID: locationId,
         _PROMOTION_ID: promotionId,
         _PROMOTION_NAME: promotionName,
       }),
@@ -1242,7 +1239,6 @@ class FirebaseAnalytics extends FirebasePluginPlatform {
   Future<void> logLoyaltyCouponUsed({
     String? creativeName,
     String? creativeSlot,
-    List<AnalyticsEventItem>? items,
     String? promotionId,
     String? promotionName,
     String? useType,
@@ -1253,8 +1249,6 @@ class FirebaseAnalytics extends FirebasePluginPlatform {
       parameters: filterOutNulls(<String, Object?>{
         _CREATIVE_NAME: creativeName,
         _CREATIVE_SLOT: creativeSlot,
-        _ITEMS: _marshalItems(items),
-        _LOCATION_ID: locationId,
         _PROMOTION_ID: promotionId,
         _PROMOTION_NAME: promotionName,
         _USE_TYPE: useType,

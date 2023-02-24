@@ -1209,6 +1209,72 @@ class FirebaseAnalytics extends FirebasePluginPlatform {
     );
   }
 
+  /// Logs loyalty_coupon_viewed event.
+  ///
+  /// This event signifies that a user was clicked coupon.
+  ///
+  Future<void> logLoyaltyCouponViewed({
+    String? creativeName,
+    String? creativeSlot,
+    List<AnalyticsEventItem>? items,
+    String? promotionId,
+    String? promotionName,
+    AnalyticsCallOptions? callOptions,
+  }) {
+    return logEvent(
+      name: 'loyalty_coupon_viewed',
+      parameters: filterOutNulls(<String, Object?>{
+        _CREATIVE_NAME: creativeName,
+        _CREATIVE_SLOT: creativeSlot,
+        _ITEMS: _marshalItems(items),
+        _LOCATION_ID: locationId,
+        _PROMOTION_ID: promotionId,
+        _PROMOTION_NAME: promotionName,
+      }),
+      callOptions: callOptions,
+    );
+  }
+
+  /// Logs loyalty_coupon_viewed event.
+  ///
+  /// This event signifies that a user was used coupon.
+  ///
+  Future<void> logLoyaltyCouponUsed({
+    String? creativeName,
+    String? creativeSlot,
+    List<AnalyticsEventItem>? items,
+    String? promotionId,
+    String? promotionName,
+    String? useType,
+    AnalyticsCallOptions? callOptions,
+  }) {
+    return logEvent(
+      name: 'loyalty_coupon_used',
+      parameters: filterOutNulls(<String, Object?>{
+        _CREATIVE_NAME: creativeName,
+        _CREATIVE_SLOT: creativeSlot,
+        _ITEMS: _marshalItems(items),
+        _LOCATION_ID: locationId,
+        _PROMOTION_ID: promotionId,
+        _PROMOTION_NAME: promotionName,
+        _USE_TYPE: useType,
+      }),
+      callOptions: callOptions,
+    );
+  }
+
+  /// Logs loyalty_card_add event.
+  ///
+  /// This event signifies that a user was added member card.
+  ///
+  Future<void> logLoyaltyCardAdd({
+    String? eventCategory,
+  }) {
+    return logEvent(
+      name: 'loyalty_card_add'
+    );
+  }
+
   /// Sets the duration of inactivity that terminates the current session.
   ///
   /// The default value is 1800000 milliseconds (30 minutes).
@@ -1498,3 +1564,6 @@ const _ORDER_MODE = 'order_mode';
 
 /// Discount.
 const _DISCOUNT = 'discount';
+
+/// Use type
+const String _USE_TYPE = 'use_type';
